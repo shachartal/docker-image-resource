@@ -61,9 +61,7 @@ if [ "$skip_download" = "false" ]; then
 
   docker_pull "$image_name"
 
-  if [ "$save" = "true" ]; then
-    docker save -o ${destination}/image "$image_name"
-  fi
+  docker save -o ${destination}/image "$image_name"
 
   image_id="$(image_from_digest "$repository" "$digest")"
 
